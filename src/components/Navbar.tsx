@@ -1,71 +1,94 @@
 
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { Menu, X, GolfBall } from 'lucide-react'
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-primary"
-          >
-            <path d="M12 18v-6" />
-            <path d="M8 10V4" />
-            <path d="M16 10V4" />
-            <path d="M9 9h6" />
-            <path d="M15 5v8h.01" />
-            <path d="M9 5v8" />
-            <path d="M6 8h12" />
-            <path d="M2 22l10-10" />
-            <path d="M17 22l-5-5" />
-          </svg>
-          <span className="font-bold">Golf Elite</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-sm font-medium hover:text-primary">
-            Home
-          </Link>
-          <Link to="/player/1" className="text-sm font-medium hover:text-primary">
-            Scottie Scheffler
-          </Link>
-          <Link to="/player/2" className="text-sm font-medium hover:text-primary">
-            Rory McIlroy
-          </Link>
-          <Link to="/player/3" className="text-sm font-medium hover:text-primary">
-            Xander Schauffele
-          </Link>
-        </nav>
-        <div className="md:hidden">
-          <button className="p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+    <nav className="bg-white shadow-sm dark:bg-gray-900 border-b border-green-100 dark:border-green-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center">
+              <GolfBall className="h-8 w-8 text-primary" />
+              <span className="ml-2 text-xl font-bold text-primary">Golf Legends</span>
+            </Link>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => 
+                isActive 
+                  ? "nav-link-active" 
+                  : "nav-link text-gray-600 dark:text-gray-300"
+              }
+              end
             >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
+              Home
+            </NavLink>
+            <NavLink 
+              to="/schedule" 
+              className={({ isActive }) => 
+                isActive 
+                  ? "nav-link-active" 
+                  : "nav-link text-gray-600 dark:text-gray-300"
+              }
+            >
+              Tournament Schedule
+            </NavLink>
+          </div>
+          
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
-    </header>
-  );
-};
+      
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => 
+                isActive 
+                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-green-50 dark:bg-green-900" 
+                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-green-50 dark:text-gray-300 dark:hover:bg-green-900"
+              }
+              onClick={toggleMenu}
+              end
+            >
+              Home
+            </NavLink>
+            <NavLink 
+              to="/schedule" 
+              className={({ isActive }) => 
+                isActive 
+                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-green-50 dark:bg-green-900" 
+                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-green-50 dark:text-gray-300 dark:hover:bg-green-900"
+              }
+              onClick={toggleMenu}
+            >
+              Tournament Schedule
+            </NavLink>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}
 
-export default Navbar;
+export default Navbar

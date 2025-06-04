@@ -1,96 +1,64 @@
 
+import { Link } from 'react-router-dom'
+import { GolfBall, Instagram, Twitter, Facebook } from 'lucide-react'
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+  
   return (
-    <footer className="border-t bg-background">
-      <div className="container py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Golf Elite</h3>
-            <p className="text-sm text-muted-foreground">
-              Your source for the latest news and information about the world's top golfers.
-            </p>
+    <footer className="bg-green-50 dark:bg-gray-900 border-t border-green-100 dark:border-green-900">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="md:flex md:items-center md:justify-between">
+          <div className="flex justify-center md:justify-start mb-8 md:mb-0">
+            <Link to="/" className="flex items-center">
+              <GolfBall className="h-8 w-8 text-primary" />
+              <span className="ml-2 text-xl font-bold text-primary">Golf Legends</span>
+            </Link>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary">
-                  PGA Tour Schedule
+          
+          <div className="grid grid-cols-2 gap-8 md:gap-20 mb-8 md:mb-0">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">Navigation</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="/" className="footer-link">Home</Link>
+                </li>
+                <li>
+                  <Link to="/schedule" className="footer-link">Tournament Schedule</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-500 hover:text-primary">
+                  <span className="sr-only">Twitter</span>
+                  <Twitter className="h-6 w-6" />
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary">
-                  World Rankings
+                <a href="#" className="text-gray-500 hover:text-primary">
+                  <span className="sr-only">Instagram</span>
+                  <Instagram className="h-6 w-6" />
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary">
-                  Major Championships
+                <a href="#" className="text-gray-500 hover:text-primary">
+                  <span className="sr-only">Facebook</span>
+                  <Facebook className="h-6 w-6" />
                 </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-              </a>
+              </div>
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Golf Elite. All rights reserved.
+        <div className="mt-8 border-t border-green-100 dark:border-green-900 pt-8 md:flex md:items-center md:justify-between">
+          <p className="text-center text-gray-500 dark:text-gray-400">
+            &copy; {currentYear} Golf Legends. All rights reserved.
           </p>
+          <div className="mt-4 md:mt-0 flex justify-center space-x-6">
+            <a href="#" className="text-sm text-gray-500 hover:text-primary">Privacy Policy</a>
+            <a href="#" className="text-sm text-gray-500 hover:text-primary">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
