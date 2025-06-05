@@ -4,7 +4,7 @@ import { GolfBall } from 'lucide-react'
 
 const NotFound = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <div className="augusta-pattern max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
       <div className="flex justify-center mb-6">
         <GolfBall className="h-16 w-16 text-primary" />
       </div>
@@ -15,7 +15,7 @@ const NotFound = () => {
       </p>
       <Link 
         to="/" 
-        className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+        className="inline-flex items-center justify-center masters-badge py-3 px-6 rounded-lg transition-colors"
       >
         Return to Home
       </Link>

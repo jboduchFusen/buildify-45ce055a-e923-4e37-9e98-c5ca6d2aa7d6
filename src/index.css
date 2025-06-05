@@ -11,19 +11,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142.1 76.2% 36.3%;
+    --primary: 114 42% 33%;
     --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 120 16.7% 97.6%;
-    --secondary-foreground: 142.1 47.4% 11.2%;
-    --muted: 120 14.3% 95.9%;
+    --secondary: 114 30% 96%;
+    --secondary-foreground: 114 42% 20%;
+    --muted: 114 20% 95.9%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 142.1 76.2% 96.1%;
-    --accent-foreground: 142.1 47.4% 11.2%;
+    --accent: 114 42% 96.1%;
+    --accent-foreground: 114 42% 20%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 120 5.9% 90%;
-    --input: 120 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
+    --border: 114 20% 90%;
+    --input: 114 20% 90%;
+    --ring: 114 42% 33%;
     --radius: 0.5rem;
   }
  
@@ -34,19 +34,19 @@
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
-    --primary: 142.1 70.6% 45.3%;
+    --primary: 114 42% 33%;
     --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 120 3.7% 15.9%;
+    --secondary: 114 10% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 142.1 70.6% 12%;
+    --accent: 114 42% 12%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
+    --ring: 114 42% 33%;
   }
 }
 
@@ -65,14 +65,18 @@
   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
 }
 
-.green-gradient {
-  background: linear-gradient(135deg, hsl(142.1, 76.2%, 36.3%), hsl(142.1, 76.2%, 26.3%));
+.masters-gradient {
+  background: linear-gradient(135deg, hsl(114, 42%, 33%), hsl(114, 42%, 23%));
 }
 
-.green-gradient-light {
-  background: linear-gradient(135deg, hsl(142.1, 76.2%, 96.1%), hsl(120, 16.7%, 97.6%));
+.masters-gradient-light {
+  background: linear-gradient(135deg, hsl(114, 42%, 96.1%), hsl(114, 30%, 97.6%));
 }
 
 .hero-overlay {
   background-color: rgba(0, 60, 0, 0.6);
+}
+
+.augusta-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23006400' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }

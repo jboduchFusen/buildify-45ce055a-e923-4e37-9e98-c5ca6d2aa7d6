@@ -5,20 +5,20 @@ import { topPlayers } from '../data/players'
 
 const Home = () => {
   return (
-    <div>
+    <div className="augusta-pattern">
       {/* Hero Section */}
       <section className="hero-section text-white py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center justify-center mb-6">
             <GolfBall className="h-10 w-10 mr-2" />
-            <h1 className="text-4xl md:text-6xl font-bold">Golf Legends</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">Masters Golf</h1>
           </div>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Celebrating the world's top golf players and their extraordinary achievements
           </p>
           <Link
             to={`/player/${topPlayers[0].id}`}
-            className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+            className="inline-flex items-center justify-center masters-badge py-3 px-6 rounded-lg transition-colors"
           >
             <Trophy className="mr-2 h-5 w-5" />
             <span>Explore Top Players</span>
@@ -27,11 +27,11 @@ const Home = () => {
       </section>
 
       {/* Top Players Section */}
-      <section className="py-16 bg-green-50 dark:bg-gray-900">
+      <section className="py-16 bg-[#f5f8f5] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Top 3 Players in the World</h2>
-            <div className="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <div className="augusta-divider w-20 mx-auto my-4"></div>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Meet the elite golfers who are dominating the sport with their exceptional skill and dedication
             </p>
@@ -42,7 +42,7 @@ const Home = () => {
               <Link
                 key={player.id}
                 to={`/player/${player.id}`}
-                className="player-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700"
+                className="player-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-[#006400]/20 dark:border-[#006400]/40"
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -58,15 +58,15 @@ const Home = () => {
                   <h3 className="text-xl font-bold mb-2">{player.name}</h3>
                   <p className="text-muted-foreground mb-4">{player.country}</p>
                   <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="text-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                    <div className="text-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                       <p className="font-medium text-gray-500 dark:text-gray-400">Majors</p>
                       <p className="text-lg font-bold text-primary">{player.majorWins}</p>
                     </div>
-                    <div className="text-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                    <div className="text-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                       <p className="font-medium text-gray-500 dark:text-gray-400">Wins</p>
                       <p className="text-lg font-bold text-primary">{player.careerWins}</p>
                     </div>
-                    <div className="text-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                    <div className="text-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                       <p className="font-medium text-gray-500 dark:text-gray-400">Drive</p>
                       <p className="text-lg font-bold text-primary">{player.avgDrive}</p>
                     </div>
@@ -83,11 +83,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Golf News</h2>
-            <div className="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <div className="augusta-divider w-20 mx-auto my-4"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-[#006400]/20 dark:border-[#006400]/40">
               <img
                 src="/images/news-1.jpg"
                 alt="Scheffler wins Masters"
@@ -113,7 +113,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-[#006400]/20 dark:border-[#006400]/40">
               <img
                 src="/images/news-2.jpg"
                 alt="McIlroy putting"
@@ -139,7 +139,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-[#006400]/20 dark:border-[#006400]/40">
               <img
                 src="/images/news-3.jpg"
                 alt="Schauffele preparing"
@@ -169,15 +169,15 @@ const Home = () => {
       </section>
 
       {/* Upcoming Tournaments */}
-      <section className="py-16 bg-green-50 dark:bg-gray-900">
+      <section className="py-16 bg-[#f5f8f5] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Upcoming Tournaments</h2>
-            <div className="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <div className="augusta-divider w-20 mx-auto my-4"></div>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-[#006400]/20 dark:border-[#006400]/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
                 <h3 className="font-bold text-xl">PGA Championship</h3>
                 <div className="flex items-center mt-1">
@@ -191,7 +191,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-[#006400]/20 dark:border-[#006400]/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
                 <h3 className="font-bold text-xl">Memorial Tournament</h3>
                 <div className="flex items-center mt-1">
@@ -205,7 +205,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-[#006400]/20 dark:border-[#006400]/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
                 <h3 className="font-bold text-xl">U.S. Open</h3>
                 <div className="flex items-center mt-1">
@@ -222,7 +222,7 @@ const Home = () => {
             <div className="text-center mt-8">
               <Link 
                 to="/schedule" 
-                className="inline-flex items-center justify-center bg-white dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-gray-700 text-primary font-medium py-2 px-4 border border-primary rounded-lg transition-colors"
+                className="inline-flex items-center justify-center bg-white dark:bg-gray-800 hover:bg-[#f5f8f5] dark:hover:bg-gray-700 text-primary font-medium py-2 px-4 border border-primary rounded-lg transition-colors"
               >
                 View Full Schedule
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -237,10 +237,10 @@ const Home = () => {
       {/* Newsletter */}
       <section className="py-16">
         <div className="container max-w-4xl">
-          <div className="green-gradient-light dark:bg-gray-800 rounded-lg p-8 md:p-12 border border-green-200 dark:border-green-900 shadow-md">
+          <div className="masters-gradient-light dark:bg-gray-800 rounded-lg p-8 md:p-12 border border-[#006400]/20 dark:border-[#006400]/40 shadow-md">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <div className="w-16 h-1 bg-primary mx-auto mb-4"></div>
+              <div className="augusta-divider w-16 mx-auto mb-4"></div>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 Subscribe to our newsletter for the latest golf news, player updates, and tournament coverage.
               </p>
@@ -254,7 +254,7 @@ const Home = () => {
               />
               <button
                 type="submit"
-                className="h-12 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-md font-medium whitespace-nowrap"
+                className="h-12 masters-badge px-6 py-2 rounded-md font-medium whitespace-nowrap"
               >
                 Subscribe
               </button>

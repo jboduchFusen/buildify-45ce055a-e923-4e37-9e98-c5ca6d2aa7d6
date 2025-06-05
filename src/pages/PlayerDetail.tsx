@@ -27,9 +27,9 @@ const PlayerDetail = () => {
   const nextPlayer = currentIndex < topPlayers.length - 1 ? topPlayers[currentIndex + 1] : null
 
   return (
-    <div>
+    <div className="augusta-pattern">
       {/* Player Hero */}
-      <section className="bg-green-50 dark:bg-gray-900 py-12 border-b border-green-100 dark:border-green-900">
+      <section className="bg-[#f5f8f5] dark:bg-gray-900 py-12 border-b border-[#006400]/20 dark:border-[#006400]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/" className="inline-flex items-center text-primary hover:underline mb-6">
             <ArrowLeft className="h-4 w-4 mr-1" />
@@ -69,7 +69,7 @@ const PlayerDetail = () => {
               <p className="text-lg mb-6">{player.bio}</p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-[#006400]/20 dark:border-[#006400]/40">
                   <div className="flex justify-center mb-2">
                     <Trophy className="h-6 w-6 text-primary" />
                   </div>
@@ -77,7 +77,7 @@ const PlayerDetail = () => {
                   <p className="text-2xl font-bold">{player.careerWins}</p>
                 </div>
                 
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-[#006400]/20 dark:border-[#006400]/40">
                   <div className="flex justify-center mb-2">
                     <Award className="h-6 w-6 text-primary" />
                   </div>
@@ -85,7 +85,7 @@ const PlayerDetail = () => {
                   <p className="text-2xl font-bold">{player.majorWins}</p>
                 </div>
                 
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-[#006400]/20 dark:border-[#006400]/40">
                   <div className="flex justify-center mb-2">
                     <Star className="h-6 w-6 text-primary" />
                   </div>
@@ -93,7 +93,7 @@ const PlayerDetail = () => {
                   <p className="text-2xl font-bold">{player.stats.wins2024}</p>
                 </div>
                 
-                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-[#006400]/20 dark:border-[#006400]/40">
                   <div className="flex justify-center mb-2">
                     <Dumbbell className="h-6 w-6 text-primary" />
                   </div>
@@ -111,14 +111,14 @@ const PlayerDetail = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Career Highlights</h2>
-            <div className="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <div className="augusta-divider w-20 mx-auto my-4"></div>
           </div>
           
           <div className="space-y-6">
             {achievements.map((achievement, index) => (
               <div 
                 key={index} 
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-green-100 dark:border-green-900 hover:border-primary transition-colors"
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-[#006400]/20 dark:border-[#006400]/40 hover:border-primary transition-colors"
               >
                 <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                   <div>
@@ -144,14 +144,14 @@ const PlayerDetail = () => {
       </section>
 
       {/* Player Statistics */}
-      <section className="py-12 bg-green-50 dark:bg-gray-900">
+      <section className="py-12 bg-[#f5f8f5] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Player Statistics</h2>
-            <div className="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <div className="augusta-divider w-20 mx-auto my-4"></div>
           </div>
           
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-green-100 dark:border-green-900">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-[#006400]/20 dark:border-[#006400]/40">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <h3 className="text-lg font-medium mb-4 flex items-center">
@@ -159,15 +159,15 @@ const PlayerDetail = () => {
                   Tournament Performance
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Wins (2024):</span>
                     <span className="font-medium text-primary">{player.stats.wins2024}</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Top 10 Finishes:</span>
                     <span className="font-medium text-primary">{player.stats.top10}</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Cuts Made:</span>
                     <span className="font-medium text-primary">{player.stats.cutsMade}%</span>
                   </li>
@@ -180,15 +180,15 @@ const PlayerDetail = () => {
                   Scoring
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Scoring Average:</span>
                     <span className="font-medium text-primary">{player.stats.scoringAvg}</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Greens in Regulation:</span>
                     <span className="font-medium text-primary">{player.stats.greensInReg}%</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Putts per Round:</span>
                     <span className="font-medium text-primary">{player.stats.puttsPerRound}</span>
                   </li>
@@ -201,15 +201,15 @@ const PlayerDetail = () => {
                   Driving
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Driving Distance:</span>
                     <span className="font-medium text-primary">{player.stats.drivingDistance} yards</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Driving Accuracy:</span>
                     <span className="font-medium text-primary">{player.stats.drivingAccuracy}%</span>
                   </li>
-                  <li className="flex justify-between items-center p-2 bg-green-50 dark:bg-gray-700 rounded-md">
+                  <li className="flex justify-between items-center p-2 bg-[#f5f8f5] dark:bg-gray-700 rounded-md">
                     <span className="text-gray-600 dark:text-gray-300">Sand Save Percentage:</span>
                     <span className="font-medium text-primary">{player.stats.sandSaves}%</span>
                   </li>
@@ -221,7 +221,7 @@ const PlayerDetail = () => {
       </section>
 
       {/* Player Navigation */}
-      <section className="py-8 border-t border-green-100 dark:border-green-900">
+      <section className="py-8 border-t border-[#006400]/20 dark:border-[#006400]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {prevPlayer ? (
@@ -241,7 +241,7 @@ const PlayerDetail = () => {
             
             <Link
               to="/"
-              className="bg-white dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-gray-700 text-primary px-4 py-2 rounded-md font-medium border border-primary"
+              className="bg-white dark:bg-gray-800 hover:bg-[#f5f8f5] dark:hover:bg-gray-700 text-primary px-4 py-2 rounded-md font-medium border border-primary"
             >
               All Players
             </Link>

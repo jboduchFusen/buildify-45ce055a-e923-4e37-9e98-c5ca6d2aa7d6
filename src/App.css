@@ -11,7 +11,7 @@
 
 .player-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 100, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 77, 0, 0.15);
   border-color: hsl(var(--primary));
 }
 
@@ -57,4 +57,33 @@
 
 .footer-link:hover {
   color: hsl(var(--primary));
+}
+
+.masters-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: hsl(var(--primary));
+  color: white;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+
+.masters-badge::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid hsl(var(--primary));
+  border-radius: 0.35rem;
+  pointer-events: none;
+}
+
+.augusta-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
 }

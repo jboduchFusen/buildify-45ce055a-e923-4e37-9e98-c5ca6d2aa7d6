@@ -6,13 +6,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
   
   return (
-    <footer className="bg-green-50 dark:bg-gray-900 border-t border-green-100 dark:border-green-900">
+    <footer className="bg-[#f5f8f5] dark:bg-gray-900 border-t border-[#006400]/20 dark:border-[#006400]/40">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex justify-center md:justify-start mb-8 md:mb-0">
             <Link to="/" className="flex items-center">
               <GolfBall className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold text-primary">Golf Legends</span>
+              <span className="ml-2 text-xl font-bold text-primary">Masters Golf</span>
             </Link>
           </div>
           
@@ -47,9 +47,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-green-100 dark:border-green-900 pt-8 md:flex md:items-center md:justify-between">
+        <div className="mt-8 border-t border-[#006400]/20 dark:border-[#006400]/40 pt-8 md:flex md:items-center md:justify-between">
           <p className="text-center text-gray-500 dark:text-gray-400">
-            &copy; {currentYear} Golf Legends. All rights reserved.
+            &copy; {currentYear} Masters Golf. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex justify-center space-x-6">
             <a href="#" className="text-sm text-gray-500 hover:text-primary">Privacy Policy</a>

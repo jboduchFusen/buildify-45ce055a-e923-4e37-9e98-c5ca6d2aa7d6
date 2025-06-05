@@ -11,13 +11,13 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-white shadow-sm dark:bg-gray-900 border-b border-green-100 dark:border-green-900">
+    <nav className="bg-white shadow-sm dark:bg-gray-900 border-b border-[#006400]/20 dark:border-[#006400]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <GolfBall className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold text-primary">Golf Legends</span>
+              <span className="ml-2 text-xl font-bold text-primary">Masters Golf</span>
             </Link>
           </div>
           
@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary hover:bg-green-50 dark:hover:bg-green-900"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary hover:bg-[#006400]/10 dark:hover:bg-[#006400]/20"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -65,8 +65,8 @@ const Navbar = () => {
               to="/" 
               className={({ isActive }) => 
                 isActive 
-                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-green-50 dark:bg-green-900" 
-                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-green-50 dark:text-gray-300 dark:hover:bg-green-900"
+                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-[#006400]/10 dark:bg-[#006400]/20" 
+                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-[#006400]/10 dark:text-gray-300 dark:hover:bg-[#006400]/20"
               }
               onClick={toggleMenu}
               end
@@ -77,8 +77,8 @@ const Navbar = () => {
               to="/schedule" 
               className={({ isActive }) => 
                 isActive 
-                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-green-50 dark:bg-green-900" 
-                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-green-50 dark:text-gray-300 dark:hover:bg-green-900"
+                  ? "block px-3 py-2 rounded-md text-base font-medium text-primary bg-[#006400]/10 dark:bg-[#006400]/20" 
+                  : "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-[#006400]/10 dark:text-gray-300 dark:hover:bg-[#006400]/20"
               }
               onClick={toggleMenu}
             >
